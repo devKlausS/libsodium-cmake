@@ -297,3 +297,8 @@ if(NOT SODIUM_DISABLE_TESTS)
     enable_testing()
     add_subdirectory(test)
 endif()
+
+# install the conversion tool, .so, .a, and all the header files
+#INSTALL ( TARGETS ${ly_lib_static}						DESTINATION lib )
+INSTALL ( TARGETS ${PROJECT_NAME} LIBRARY				DESTINATION lib)
+INSTALL ( DIRECTORY ${PROJECT_SOURCE_DIR}/libsodium/src/libsodium/include/		DESTINATION include )
